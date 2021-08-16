@@ -11,15 +11,16 @@ namespace TravelerApp.Data
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public Guid UserId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string Location { get; set; }
 
-        ICollection<Eat> PlacesToEat { get; set; } = new List<Eat>();
-        ICollection<See> PlacesToSee { get; set; } = new List<See>();
-        ICollection <Stay> PlacesToStay { get; set; } new List<Stay>();
+        public virtual ICollection<Eat> PlacesToEat { get; set; } = new List<Eat>();
+        public virtual ICollection<See> PlacesToSee { get; set; } = new List<See>();
+        public virtual ICollection <Stay> PlacesToStay { get; set; } = new List<Stay>();
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,9 @@ namespace TravelerApp.Data
 {
     public class RestaurantType
     {
-        public int RestaurantId { get; set; } 
-        public string Type { get; set; }
+        [Key]
+        public int RestaurantTypeId { get; set; }  
+        [Required]
+        public string Description { get; set; }
     }
 }
