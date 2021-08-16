@@ -9,5 +9,6 @@ namespace TravelerApp.Models
      public class TripCreate
     {
         public string Name { get; set; }
+        public string Location { get; set; }
     }
 }

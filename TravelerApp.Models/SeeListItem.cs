@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TravelerApp.Models
 {
-    class SeeListItem
+    public class SeeListItem
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TravelerApp.Models
 {
-    class StayListItem
-    {
+    public class StayListItem
+    { 
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

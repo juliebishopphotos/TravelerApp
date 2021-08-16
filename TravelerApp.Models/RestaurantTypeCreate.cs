@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TravelerApp.Models
 {
-    class RestaurantTypeCreate
-    {
+    public class RestaurantTypeCreate
+    { 
+        public int Id { get; set; }
+        public int RestaurantTypeId { get; set; }
     }
 }

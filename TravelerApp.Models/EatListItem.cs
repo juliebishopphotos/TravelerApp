@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TravelerApp.Models
 {
-    class EatListItem
+    public class EatListItem
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public int RestaurantTypeId { get; set; }
     }
 }
