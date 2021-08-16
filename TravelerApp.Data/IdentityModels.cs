@@ -29,5 +29,13 @@ namespace TravelerApp.Data
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Trip> Trips { get; set; }
+
+        public DbSet<Eat> Eats { get; set; }
+
+        public DbSet<See> Sees { get; set; }
+
+        public DbSet <Stay> Stays { get; set; }
     }
 }
