@@ -12,6 +12,6 @@ namespace TravelerApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
-        public virtual RestaurantType RestaurantType { get; set; }
+        public int RestaurantTypeId { get; set; } 
     }
 }

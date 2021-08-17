@@ -10,6 +10,13 @@ namespace TravelerApp.Services
 {
     public class EatService
     {
+        private readonly Guid _userId;
+
+        public EatService(Guid userId)
+        {
+            _userId = userId;
+        }
+
         public bool CreateEat(EatCreate model)
         {
             var entity =
@@ -17,7 +24,7 @@ namespace TravelerApp.Services
                 {
                     Name = model.Name,
                     Location = model.Location,
-                    RestaurantType = model.RestaurantType
+                    RestaurantTypeId = model.RestaurantTypeId
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -41,15 +48,13 @@ namespace TravelerApp.Services
                                 {
                                     Id = e.Id,
                                     Name = e.Name,
-                                    Location = e.Location,
-                                    RestaurantTypeId = (int)e.RestaurantTypeId
                                 }
                          );
                 return query.ToArray();
             }
         }
 
-        public EatDetail GetEatByID(int id)
+        public EatDetail GetEatById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -63,7 +68,7 @@ namespace TravelerApp.Services
                         Id = entity.Id,
                         Name = entity.Name,
                         Location = entity.Location,
-                        RestaurantTypeId= (int)entity.RestaurantTypeId,
+                        RestaurantTypeId= entity.RestaurantTypeId,
                     };
             }
         }
@@ -82,7 +87,7 @@ namespace TravelerApp.Services
                         Id = entity.Id,
                         Name = entity.Name,
                         Location = entity.Location,
-                        RestaurantTypeId = (int)entity.RestaurantTypeId,
+                        RestaurantTypeId = entity.RestaurantTypeId,
                     };
             }
         }
@@ -97,7 +102,7 @@ namespace TravelerApp.Services
                         .Single(e => e.Id == model.Id);
                 entity.Name = model.Name;
                 entity.Location = model.Location;
-                entity.RestaurantType = model.RestaurantType;
+                entity.RestaurantTypeId = model.RestaurantTypeId;
 
                 return ctx.SaveChanges() == 1;
             }

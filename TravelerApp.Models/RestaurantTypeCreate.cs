@@ -8,7 +8,6 @@ namespace TravelerApp.Models
 {
     public class RestaurantTypeCreate
     { 
-        public int Id { get; set; }
         public int RestaurantTypeId { get; set; }
     }
 }

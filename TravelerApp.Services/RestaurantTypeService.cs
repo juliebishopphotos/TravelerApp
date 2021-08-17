@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TravelerApp.Models
+namespace TravelerApp.Services
 {
-    public class SeeListItem
+    class RestaurantTypeService
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
     }
 }
