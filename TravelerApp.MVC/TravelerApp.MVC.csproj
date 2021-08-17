@@ -254,10 +254,14 @@
     <Content Include="Views\See\Details.cshtml" />
     <Content Include="Views\See\Edit.cshtml" />
     <Content Include="Views\See\Delete.cshtml" />
+    <Content Include="Views\Stay\Index.cshtml" />
+    <Content Include="Views\Stay\Details.cshtml" />
+    <Content Include="Views\Stay\Edit.cshtml" />
+    <Content Include="Views\Stay\Delete.cshtml" />
+    <Content Include="Views\Stay\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Stay\" />
     <Folder Include="Views\Trip\" />
   </ItemGroup>
   <ItemGroup>
