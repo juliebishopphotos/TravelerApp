@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelerApp.Services
 {
-    class TripService
+    public class TripService
     {
     }
 }
