@@ -244,10 +244,14 @@
     <Content Include="Views\Eat\Details.cshtml" />
     <Content Include="Views\Eat\Edit.cshtml" />
     <Content Include="Views\Eat\Delete.cshtml" />
+    <Content Include="Views\RestaurantType\Create.cshtml" />
+    <Content Include="Views\RestaurantType\Index.cshtml" />
+    <Content Include="Views\RestaurantType\Details.cshtml" />
+    <Content Include="Views\RestaurantType\Edit.cshtml" />
+    <Content Include="Views\RestaurantType\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\RestaurantType\" />
     <Folder Include="Views\See\" />
     <Folder Include="Views\Stay\" />
     <Folder Include="Views\Trip\" />

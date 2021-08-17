@@ -20,6 +20,6 @@ namespace TravelerApp.Data
         [Required]
         [ForeignKey(nameof(RestaurantType))]
         public int RestaurantTypeId { get; set; } 
-        public virtual RestaurantType RestaurantType { get; set; }
+        public virtual RestaurantType RestaurantType { get; set; }  
     }
 }
