@@ -56,8 +56,11 @@
     <Compile Include="StayListItem.cs" />
     <Compile Include="TripCreate.cs" />
     <Compile Include="TripDetail.cs" />
+    <Compile Include="TripEatCreate.cs" />
     <Compile Include="TripEdit.cs" />
     <Compile Include="TripListItem.cs" />
+    <Compile Include="TripSeeCreate.cs" />
+    <Compile Include="TripStayCreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelerApp.Data\TravelerApp.Data.csproj">

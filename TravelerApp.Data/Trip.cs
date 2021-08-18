@@ -18,9 +18,9 @@ namespace TravelerApp.Data
         [Required]
         public string Location { get; set; }
 
-        public virtual ICollection<Eat> Eats { get; set; } = new List<Eat>();
-        public virtual ICollection<See> Sees { get; set; } = new List<See>();
-        public virtual ICollection <Stay> Stays { get; set; } = new List<Stay>(); 
+        public virtual ICollection<TripEat> Eats { get; set; } = new List<TripEat>();
+        public virtual ICollection<TripSee> Sees { get; set; } = new List<TripSee>();
+        public virtual ICollection <TripStay> Stays { get; set; } = new List<TripStay>();  
 
     }
 }

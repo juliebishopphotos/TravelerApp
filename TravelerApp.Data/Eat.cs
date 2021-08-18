@@ -19,6 +19,6 @@ namespace TravelerApp.Data
         [Required]
         public string Description { get; set; }
 
-        public virtual ICollection<TripEat> TripEats { get; set; } = new List<TripEat>(); 
+        public virtual ICollection<TripEat> Trips { get; set; } = new List<TripEat>();    
     }
 }

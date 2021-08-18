@@ -40,6 +40,6 @@ namespace TravelerApp.Data
         [Required]
         public LodgingType TypeOfLodging { get; set; }
 
-        public virtual ICollection<TripStay> TripStays { get; set; } = new List<TripStay>();  
+        public virtual ICollection<TripStay> Trips { get; set; } = new List<TripStay>();     
     }
 }
