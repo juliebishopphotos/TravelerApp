@@ -20,7 +20,7 @@ namespace TravelerApp.Data
 
         public virtual ICollection<Eat> Eats { get; set; } = new List<Eat>();
         public virtual ICollection<See> Sees { get; set; } = new List<See>();
-        public virtual ICollection <Stay> Stays { get; set; } = new List<Stay>();
+        public virtual ICollection <Stay> Stays { get; set; } = new List<Stay>(); 
 
     }
 }

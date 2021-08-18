@@ -10,14 +10,16 @@ namespace TravelerApp.Data
 {
     public class TripSee
     {
-        [Required]
-        [ForeignKey(nameof(See))]
-        public int SeeId { get; set; }
-        public virtual See See { get; set; }
-
+        [Key, Column(Order = 0)]
         [Required]
         [ForeignKey(nameof(Trip))]
         public int TripId { get; set; }
         public virtual Trip Trip { get; set; }
+
+        [Key, Column(Order = 1)]
+        [Required]
+        [ForeignKey(nameof(See))]
+        public int SeeId { get; set; }
+        public virtual See See { get; set; }
     }
 }

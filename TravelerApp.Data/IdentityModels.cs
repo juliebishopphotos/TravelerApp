@@ -40,6 +40,12 @@ namespace TravelerApp.Data
 
         public DbSet <Stay> Stays { get; set; }
 
+        public DbSet <TripEat> TripEats { get; set; }
+
+        public DbSet<TripSee> TripSees { get; set; }
+
+        public DbSet<TripStay> TripStays { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

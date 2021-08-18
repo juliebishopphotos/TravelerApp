@@ -10,14 +10,16 @@ namespace TravelerApp.Data
 {
     public class TripStay
     {
-        [Required]
-        [ForeignKey(nameof(Stay))]
-        public int StayId { get; set; }
-        public virtual Stay Stay { get; set; }
-
+        [Key, Column(Order = 0)]
         [Required]
         [ForeignKey(nameof(Trip))]
         public int TripId { get; set; }
         public virtual Trip Trip { get; set; }
+
+        [Key, Column(Order = 1)]
+        [Required]
+        [ForeignKey(nameof(Stay))]
+        public int StayId { get; set; }
+        public virtual Stay Stay { get; set; }
     }
 }
