@@ -54,6 +54,7 @@ namespace TravelerApp.Data
                 .Add(new IdentityUserRoleConfiguration());
         }
 
+        object placeHolderVariable;
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
