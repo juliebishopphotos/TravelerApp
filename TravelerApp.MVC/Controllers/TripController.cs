@@ -61,7 +61,7 @@ namespace TravelerApp.MVC.Controllers
             var model =
                 new TripEdit
                 {
-                    Id = detail.Id,
+                    TripId = detail.TripId,
                     Name = detail.Name,
                     Location = detail.Location
                 };
@@ -74,7 +74,7 @@ namespace TravelerApp.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.Id != id)
+            if (model.TripId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

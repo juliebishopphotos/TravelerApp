@@ -9,7 +9,7 @@ namespace TravelerApp.Data
 {
     public class See
     {   [Key]
-        public int Id { get; set; }
+        public int SeeId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

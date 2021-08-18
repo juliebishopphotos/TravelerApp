@@ -46,7 +46,7 @@ namespace TravelerApp.Services
                              e =>
                                 new StayListItem
                                 {
-                                    Id = e.Id,
+                                    StayId = e.StayId,
                                     Name = e.Name,
                                 }
                          );
@@ -61,11 +61,11 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                         .Stays
-                        .Single(e => e.Id == id);
+                        .Single(e => e.StayId == id);
                 return
                     new StayDetail
                     {
-                        Id = entity.Id,
+                        StayId = entity.StayId,
                         Name = entity.Name,
                         Location = entity.Location,
                         TypeOfLodging = entity.TypeOfLodging,
@@ -84,7 +84,7 @@ namespace TravelerApp.Services
                 return
                     new StayDetail
                     {
-                        Id = entity.Id,
+                        StayId = entity.StayId,
                         Name = entity.Name,
                         Location = entity.Location,
                         TypeOfLodging = entity.TypeOfLodging,
@@ -99,7 +99,7 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                         .Stays
-                        .Single(e => e.Id == model.Id);
+                        .Single(e => e.StayId == model.StayId);
                 entity.Name = model.Name;
                 entity.Location = model.Location;
                 entity.TypeOfLodging = model.TypeOfLodging;
@@ -115,7 +115,7 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                         .Stays
-                        .Single(e => e.Id == id);
+                        .Single(e => e.StayId == id);
 
                 ctx.Stays.Remove(entity);
 

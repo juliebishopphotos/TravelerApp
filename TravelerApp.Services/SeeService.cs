@@ -46,7 +46,7 @@ namespace TravelerApp.Services
                              e =>
                                 new SeeListItem
                                 {
-                                    Id = e.Id,
+                                    SeeId = e.SeeId,
                                     Name = e.Name,
                                 }
                          );
@@ -61,11 +61,11 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                         .Sees
-                        .Single(e => e.Id == id);
+                        .Single(e => e.SeeId == id);
                 return
                     new SeeDetail
                     {
-                        Id = entity.Id,
+                        SeeId = entity.SeeId,
                         Name = entity.Name,
                         Location = entity.Location,
                         Description = entity.Description,
@@ -84,7 +84,7 @@ namespace TravelerApp.Services
                 return
                     new SeeDetail
                     {
-                        Id = entity.Id,
+                        SeeId = entity.SeeId,
                         Name = entity.Name,
                         Location = entity.Location,
                         Description = entity.Description,
@@ -99,7 +99,7 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                         .Sees
-                        .Single(e => e.Id == model.Id);
+                        .Single(e => e.SeeId == model.SeeId);
                 entity.Name = model.Name;
                 entity.Location = model.Location;
                 entity.Description = model.Description;
@@ -115,7 +115,7 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                         .Sees
-                        .Single(e => e.Id == id);
+                        .Single(e => e.SeeId == id);
 
                 ctx.Sees.Remove(entity);
 

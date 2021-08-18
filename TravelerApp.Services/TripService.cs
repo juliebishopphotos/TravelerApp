@@ -45,7 +45,7 @@ namespace TravelerApp.Services
                         e =>
                         new TripListItem
                         {
-                            Id = e.Id,
+                            TripId = e.Id,
                             Name = e.Name,
                         }
                         );
@@ -66,7 +66,7 @@ namespace TravelerApp.Services
                 {
                     var name = new EatListItem()
                     {
-                        Id = eat.Id,
+                        EatId = eat.EatId,
                         Name = eat.Name,
                     };
                     placesToEat.Add(name);
@@ -74,7 +74,7 @@ namespace TravelerApp.Services
                 return
                     new TripDetail
                     {
-                        Id = entity.Id,
+                        TripId = entity.Id,
                         Name = entity.Name,
                         Location = entity.Location,
                         PlacesToEat = entity.PlacesToEat,
@@ -92,9 +92,9 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                     .Trips
-                    .Single(e => e.Id == model.Id && e.UserId == _userId);
+                    .Single(e => e.Id == model.TripId && e.UserId == _userId);
 
-                entity.Id = model.Id;
+                entity.Id = model.TripId;
                 entity.Name = model.Name;
                 entity.Location = model.Location;
 

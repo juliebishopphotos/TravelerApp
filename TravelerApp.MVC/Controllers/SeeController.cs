@@ -61,7 +61,7 @@ namespace TravelerApp.MVC.Controllers
             var model =
                 new SeeEdit
                 {
-                    Id = detail.Id,
+                    SeeId = detail.SeeId,
                     Name = detail.Name,
                     Location = detail.Location,
                     Description= detail.Description
@@ -75,7 +75,7 @@ namespace TravelerApp.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.Id != id)
+            if (model.SeeId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

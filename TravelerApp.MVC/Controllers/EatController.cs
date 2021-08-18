@@ -62,7 +62,7 @@ namespace TravelerApp.MVC.Controllers
             var model =
                 new EatEdit
                 {
-                    Id = detail.Id,
+                    EatId = detail.EatId,
                     Name = detail.Name,
                     Location = detail.Location,
                     RestaurantTypeId = detail.RestaurantTypeId
@@ -76,7 +76,7 @@ namespace TravelerApp.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.Id != id)
+            if (model.EatId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

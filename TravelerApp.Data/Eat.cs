@@ -11,7 +11,7 @@ namespace TravelerApp.Data
     public class Eat
     {
         [Key]
-        public int Id { get; set; } 
+        public int EatId { get; set; }  
         [Required]
         public string Name { get; set; }
         [Required]
@@ -20,6 +20,11 @@ namespace TravelerApp.Data
         [Required]
         [ForeignKey(nameof(RestaurantType))]
         public int RestaurantTypeId { get; set; } 
-        public virtual RestaurantType RestaurantType { get; set; }  
+        public virtual RestaurantType RestaurantType { get; set; }
+
+        [Required]
+        [ForeignKey(nameof(Trip))]
+        public int TripId{ get; set; }
+        public virtual Trip Trip { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace TravelerApp.Data
     public class Stay
     {
         [Key]
-        public int Id { get; set; }
+        public int StayId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

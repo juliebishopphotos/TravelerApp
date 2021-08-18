@@ -9,7 +9,7 @@ namespace TravelerApp.Models
 {
     public class TripDetail
     {
-        public int Id { get; set; }
+        public int TripId { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
         public ICollection<Eat> PlacesToEat { get; set; }

@@ -8,7 +8,7 @@ namespace TravelerApp.Models
 {
     public class EatDetail
     {
-        public int Id { get; set; }
+        public int EatId { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
         public int RestaurantTypeId { get; set; }
