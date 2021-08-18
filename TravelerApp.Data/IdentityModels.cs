@@ -36,8 +36,6 @@ namespace TravelerApp.Data
 
         public DbSet<Eat> Eats { get; set; }
 
-        public DbSet<RestaurantType> RestaurantTypes { get; set; }
-
         public DbSet<See> Sees { get; set; }
 
         public DbSet <Stay> Stays { get; set; }

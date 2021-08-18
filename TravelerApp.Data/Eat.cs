@@ -16,15 +16,9 @@ namespace TravelerApp.Data
         public string Name { get; set; }
         [Required]
         public string Location { get; set; }
-
         [Required]
-        [ForeignKey(nameof(RestaurantType))]
-        public int RestaurantTypeId { get; set; } 
-        public virtual RestaurantType RestaurantType { get; set; }
+        public string Description { get; set; }
 
-        [Required]
-        [ForeignKey(nameof(Trip))]
-        public int TripId{ get; set; }
-        public virtual Trip Trip { get; set; }
+        public virtual ICollection<TripEat> TripEats { get; set; } = new List<TripEat>(); 
     }
 }

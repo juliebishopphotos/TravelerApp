@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace TravelerApp.Data
 {
-    public class TripEat
+    public class TripSee
     {
         [Required]
-        [ForeignKey(nameof(Eat))]
-        public int EatId { get; set; }
-        public virtual Eat Eat { get; set; }
+        [ForeignKey(nameof(See))]
+        public int SeeId { get; set; }
+        public virtual See See { get; set; }
 
         [Required]
-        [ForeignKey(nameof(Trip))] 
-       public int TripId { get; set; }
-       public virtual Trip Trip { get; set; }
+        [ForeignKey(nameof(Trip))]
+        public int TripId { get; set; }
+        public virtual Trip Trip { get; set; }
     }
 }

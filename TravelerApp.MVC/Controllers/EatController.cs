@@ -65,7 +65,7 @@ namespace TravelerApp.MVC.Controllers
                     EatId = detail.EatId,
                     Name = detail.Name,
                     Location = detail.Location,
-                    RestaurantTypeId = detail.RestaurantTypeId
+                    Description = detail.Description
                 };
             return View(model);
         }

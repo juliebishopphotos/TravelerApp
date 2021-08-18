@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,5 +40,6 @@ namespace TravelerApp.Data
         [Required]
         public LodgingType TypeOfLodging { get; set; }
 
+        public virtual ICollection<TripStay> TripStays { get; set; } = new List<TripStay>();  
     }
 }

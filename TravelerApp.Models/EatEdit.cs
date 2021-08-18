@@ -12,6 +12,6 @@ namespace TravelerApp.Models
         public int EatId { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
-        public int RestaurantTypeId { get; set; } 
+        public string Description { get; set; } 
     }
 }

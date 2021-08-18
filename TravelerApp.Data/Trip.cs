@@ -10,7 +10,7 @@ namespace TravelerApp.Data
     public class Trip
     {
         [Key]
-        public int Id { get; set; }
+        public int TripId { get; set; }
         [Required]
         public Guid UserId { get; set; }
         [Required]
@@ -18,9 +18,9 @@ namespace TravelerApp.Data
         [Required]
         public string Location { get; set; }
 
-        public virtual ICollection<Eat> PlacesToEat { get; set; } = new List<Eat>();
-        public virtual ICollection<See> PlacesToSee { get; set; } = new List<See>();
-        public virtual ICollection <Stay> PlacesToStay { get; set; } = new List<Stay>();
+        public virtual ICollection<Eat> Eats { get; set; } = new List<Eat>();
+        public virtual ICollection<See> Sees { get; set; } = new List<See>();
+        public virtual ICollection <Stay> Stays { get; set; } = new List<Stay>();
 
     }
 }

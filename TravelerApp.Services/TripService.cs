@@ -45,7 +45,7 @@ namespace TravelerApp.Services
                         e =>
                         new TripListItem
                         {
-                            TripId = e.Id,
+                            TripId = e.TripId,
                             Name = e.Name,
                         }
                         );
@@ -60,9 +60,9 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                     .Trips
-                    .Single(e => e.Id == id && e.UserId == _userId);
+                    .Single(e => e.TripId == id && e.UserId == _userId);
                 List<EatListItem> placesToEat = new List<EatListItem>();
-                foreach (var eat in entity.PlacesToEat)
+                foreach (var eat in entity.Eats)
                 {
                     var name = new EatListItem()
                     {
@@ -74,12 +74,12 @@ namespace TravelerApp.Services
                 return
                     new TripDetail
                     {
-                        TripId = entity.Id,
+                        TripId = entity.TripId,
                         Name = entity.Name,
                         Location = entity.Location,
-                        PlacesToEat = entity.PlacesToEat,
-                        PlacesToSee = entity.PlacesToSee,
-                        PlacesToStay = entity.PlacesToStay
+                        PlacesToEat = entity.Eats,
+                        PlacesToSee = entity.Sees,
+                        PlacesToStay = entity.Stays
                     };
             }
 
@@ -92,9 +92,9 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                     .Trips
-                    .Single(e => e.Id == model.TripId && e.UserId == _userId);
+                    .Single(e => e.TripId == model.TripId && e.UserId == _userId);
 
-                entity.Id = model.TripId;
+                entity.TripId = model.TripId;
                 entity.Name = model.Name;
                 entity.Location = model.Location;
 
@@ -109,7 +109,7 @@ namespace TravelerApp.Services
                 var entity =
                     ctx
                     .Trips
-                    .Single(e => e.Id == id && e.UserId == _userId);
+                    .Single(e => e.TripId == id && e.UserId == _userId);
 
                 ctx.Trips.Remove(entity);
 
