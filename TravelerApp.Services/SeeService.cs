@@ -24,7 +24,7 @@ namespace TravelerApp.Services
                 {
                     Name = model.Name,
                     Location = model.Location,
-                    Description = model.Description
+                    Description = model.Description,
 
                 };
             using (var ctx = new ApplicationDbContext())

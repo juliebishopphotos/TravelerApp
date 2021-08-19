@@ -12,8 +12,8 @@ namespace TravelerApp.Models
         public int TripId { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
-        public ICollection<Eat> Eats { get; set; } 
-        public ICollection<See> Sees { get; set; }
-        public ICollection<Stay> Stays { get; set; }
+        public ICollection<EatListItem> Eats { get; set; } 
+        public ICollection<SeeListItem> Sees { get; set; }
+        public ICollection<StayListItem> Stays { get; set; }
     }
 }

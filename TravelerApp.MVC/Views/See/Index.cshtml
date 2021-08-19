@@ -12,22 +12,28 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.SeeId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SeeId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SeeId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SeeId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.SeeId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.SeeId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.SeeId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.SeeId })
+    </td>
+</tr>
 }
 
 </table>

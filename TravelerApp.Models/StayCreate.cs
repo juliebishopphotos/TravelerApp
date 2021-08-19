@@ -12,6 +12,5 @@ namespace TravelerApp.Models
         public string Name { get; set; }
         public string Location { get; set; }
         public LodgingType TypeOfLodging { get; set; }
-        public int TripId { get; set; }
     }
 }

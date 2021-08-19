@@ -10,6 +10,5 @@ namespace TravelerApp.Models
     {
         public int SeeId { get; set; }
         public string Name { get; set; }
-        public int TripId { get; set; }
     }
 }
