@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TravelerApp.Models
 {
-    public class StayListItem
-    { 
-        public int StayId { get; set; }
-        public string Name { get; set; }
-        public int TripId { get; set; }
+    public class TripEatDetail
+    {
+        public string TripName { get; set; }
+
+        public string EatName { get; set; }
     }
 }

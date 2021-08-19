@@ -58,7 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeeService.cs" />
     <Compile Include="StayService.cs" />
+    <Compile Include="TripEatService.cs" />
+    <Compile Include="TripSeeService.cs" />
     <Compile Include="TripService.cs" />
+    <Compile Include="TripStayService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelerApp.Data\TravelerApp.Data.csproj">

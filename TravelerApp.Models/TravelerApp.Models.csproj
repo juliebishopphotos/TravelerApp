@@ -57,10 +57,13 @@
     <Compile Include="TripCreate.cs" />
     <Compile Include="TripDetail.cs" />
     <Compile Include="TripEatCreate.cs" />
+    <Compile Include="TripEatDetail.cs" />
     <Compile Include="TripEdit.cs" />
     <Compile Include="TripListItem.cs" />
     <Compile Include="TripSeeCreate.cs" />
+    <Compile Include="TripSeeDetail.cs" />
     <Compile Include="TripStayCreate.cs" />
+    <Compile Include="TripStayDetail.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelerApp.Data\TravelerApp.Data.csproj">
