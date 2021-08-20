@@ -9,7 +9,6 @@ namespace TravelerApp.Models
     public class TripStayDetail
     {
         public string TripName { get; set; }
-
         public string StayName { get; set; } 
     }
 }

@@ -11,19 +11,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.TripId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.TripId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
         <dt>
@@ -34,10 +34,33 @@
             @Html.DisplayFor(model => model.Location)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Eats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stays)
+        </dd>
+
     </dl>
 </div>
-
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TripId }) |
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

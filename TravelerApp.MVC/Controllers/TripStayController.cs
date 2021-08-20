@@ -26,7 +26,7 @@ namespace TravelerApp.MVC.Controllers
 
             if (service.CreateTripStay(model))
             {
-                TempData["SaveResult"] = "Place to stay was add to trip.";
+                TempData["SaveResult"] = "Lodging was added to your trip.";
                 return RedirectToAction("Index");
             };
 
@@ -51,7 +51,7 @@ namespace TravelerApp.MVC.Controllers
 
             service.DeleteTripStay(stayId);
 
-            TempData["SaveResult"] = "Place to stay was deleted from trip.";
+            TempData["SaveResult"] = "Lodging was deleted from your trip.";
 
             return RedirectToAction("Index");
         }

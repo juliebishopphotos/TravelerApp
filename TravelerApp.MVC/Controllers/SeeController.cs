@@ -11,7 +11,6 @@ namespace TravelerApp.MVC.Controllers
 {
     public class SeeController : Controller
     {
-        // GET: See
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -21,14 +20,11 @@ namespace TravelerApp.MVC.Controllers
             return View(model);
         }
 
-        //Add method here VVVV
-        //GET
         public ActionResult Create()
         {
             return View();
         }
 
-        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(SeeCreate model)
@@ -39,7 +35,7 @@ namespace TravelerApp.MVC.Controllers
 
             if (service.CreateSee(model))
             {
-                TempData["SaveResult"] = "Place to see was created.";
+                TempData["SaveResult"] = "Attraction was created.";
                 return RedirectToAction("Index");
             };
 
@@ -85,11 +81,11 @@ namespace TravelerApp.MVC.Controllers
 
             if (service.UpdateSee(model))
             {
-                TempData["SaveResult"] = "Place to see was updated.";
+                TempData["SaveResult"] = "Attraction was updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Place to see could not be updated.");
+            ModelState.AddModelError("", "Attraction could not be updated.");
             return View(model);
         }
 
@@ -111,7 +107,7 @@ namespace TravelerApp.MVC.Controllers
 
             service.DeleteSee(id);
 
-            TempData["SaveResult"] = "Place to see was deleted.";
+            TempData["SaveResult"] = "Attraction was deleted.";
 
             return RedirectToAction("Index");
         }

@@ -11,6 +11,11 @@ namespace TravelerApp.MVC.Controllers
 {
     public class TripEatController : Controller
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public ActionResult Create()
         {
             return View();
@@ -26,7 +31,7 @@ namespace TravelerApp.MVC.Controllers
 
             if (service.CreateTripEat(model))
             {
-                TempData["SaveResult"] = "Place to eat was add to trip.";
+                TempData["SaveResult"] = "Restaurant was added to your trip.";
                 return RedirectToAction("Index");
             };
 
@@ -51,7 +56,7 @@ namespace TravelerApp.MVC.Controllers
 
             service.DeleteTripEat(eatId);
 
-            TempData["SaveResult"] = "Place to eat was deleted from trip.";
+            TempData["SaveResult"] = "Restaurant was deleted from your trip.";
 
             return RedirectToAction("Index");
         }

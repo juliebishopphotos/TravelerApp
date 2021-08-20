@@ -59,28 +59,25 @@ namespace TravelerApp.Services
             {
                 var entity =
                     ctx
-                    .Trips
-                    .Single(e => e.TripId == id && e.UserId == _userId);
-                List<EatListItem> Eats = new List<EatListItem>();
-                foreach (var eat in entity.Eats)
-                {
-                    var name = new EatListItem()
-                    {
-                        EatId = eat.EatId,
-                        //Name = eat.Name,
-                    };
-                    Eats.Add(name);
-                }
+                     .Trips
+                     .Single(e => e.TripId == id);
+                ICollection<EatListItem> eats = new List<EatListItem>();
+                ICollection<SeeListItem> sees = new List<SeeListItem>();
+                ICollection<StayListItem> stays = new List<StayListItem>();
                 return
                     new TripDetail
                     {
                         TripId = entity.TripId,
                         Name = entity.Name,
                         Location = entity.Location,
+                        Eats = eats,
+                        Sees = sees,
+                        Stays = stays
                     };
             }
 
         }
+
 
         public bool UpdateTrip(TripEdit model)
         {

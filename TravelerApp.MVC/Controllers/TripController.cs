@@ -11,7 +11,6 @@ namespace TravelerApp.MVC.Controllers
 {
     public class TripController : Controller
     {
-        // GET: Trip
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -21,14 +20,11 @@ namespace TravelerApp.MVC.Controllers
             return View(model);
         }
 
-        //Add method here VVVV
-        //GET
         public ActionResult Create()
         {
             return View();
         }
 
-        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(TripCreate model)
@@ -84,7 +80,7 @@ namespace TravelerApp.MVC.Controllers
 
             if (service.UpdateTrip(model))
             {
-                TempData["SaveResult"] = "Your ntrip was updated.";
+                TempData["SaveResult"] = "Your trip was updated.";
                 return RedirectToAction("Index");
             }
 

@@ -12,7 +12,6 @@ namespace TravelerApp.MVC.Controllers
     [Authorize]
     public class EatController : Controller
     {
-        // GET: Eat
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -22,14 +21,11 @@ namespace TravelerApp.MVC.Controllers
             return View(model);
         }
 
-        //Add method here VVVV
-        //GET
         public ActionResult Create()
         {
             return View();
         }
 
-        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(EatCreate model)
@@ -112,7 +108,7 @@ namespace TravelerApp.MVC.Controllers
 
             service.DeleteEat(id);
 
-            TempData["SaveResult"] = "Your restaurant was deleted.";
+            TempData["SaveResult"] = "Restaurant was deleted.";
 
             return RedirectToAction("Index");
         }

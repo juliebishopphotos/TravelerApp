@@ -251,7 +251,6 @@
     <Content Include="Views\Stay\Delete.cshtml" />
     <Content Include="Views\Stay\Create.cshtml" />
     <Content Include="Views\Trip\Create.cshtml" />
-    <Content Include="Views\Trip\Details.cshtml" />
     <Content Include="Views\Trip\Edit.cshtml" />
     <Content Include="Views\Trip\Delete.cshtml" />
     <Content Include="Views\Trip\Index.cshtml" />
@@ -263,11 +262,14 @@
     <Content Include="Views\Eat\Details.cshtml" />
     <Content Include="Views\Eat\Edit.cshtml" />
     <Content Include="Views\Eat\Delete.cshtml" />
+    <Content Include="Views\TripSee\Create.cshtml" />
+    <Content Include="Views\TripSee\Delete.cshtml" />
+    <Content Include="Views\TripStay\Create.cshtml" />
+    <Content Include="Views\TripStay\Delete.cshtml" />
+    <Content Include="Views\Trip\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TripSee\" />
-    <Folder Include="Views\TripStay\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

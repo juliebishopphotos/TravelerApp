@@ -33,7 +33,6 @@ namespace TravelerApp.Services
             }
         }
 
-
         public TripEatDetail GetTripEatById(int tripId, int eatId)
         {
             using (var ctx = new ApplicationDbContext())

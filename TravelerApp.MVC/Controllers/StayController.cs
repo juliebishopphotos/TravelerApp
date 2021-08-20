@@ -11,7 +11,6 @@ namespace TravelerApp.MVC.Controllers
 {
     public class StayController : Controller
     {
-        // GET: See
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -21,14 +20,11 @@ namespace TravelerApp.MVC.Controllers
             return View(model);
         }
 
-        //Add method here VVVV
-        //GET
         public ActionResult Create()
         {
             return View();
         }
 
-        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(StayCreate model)
@@ -39,7 +35,7 @@ namespace TravelerApp.MVC.Controllers
 
             if (service.CreateStay(model))
             {
-                TempData["SaveResult"] = "Place to stay was created.";
+                TempData["SaveResult"] = "Lodging was created.";
                 return RedirectToAction("Index");
             };
 
@@ -85,11 +81,11 @@ namespace TravelerApp.MVC.Controllers
 
             if (service.UpdateStay(model))
             {
-                TempData["SaveResult"] = "Place to stay was updated.";
+                TempData["SaveResult"] = "Lodging was updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Place to stay could not be updated.");
+            ModelState.AddModelError("", "Lodging could not be updated.");
             return View(model);
         }
 
@@ -111,7 +107,7 @@ namespace TravelerApp.MVC.Controllers
 
             service.DeleteStay(id);
 
-            TempData["SaveResult"] = "Place to stay was deleted.";
+            TempData["SaveResult"] = "Lodging was deleted.";
 
             return RedirectToAction("Index");
         }
