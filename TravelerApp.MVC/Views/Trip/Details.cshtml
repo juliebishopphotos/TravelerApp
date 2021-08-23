@@ -33,34 +33,69 @@
         <dd>
             @Html.DisplayFor(model => model.Location)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Eats)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Eats)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sees)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sees)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Stays)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Stays)
-        </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Restaurants</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Eats)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Attractions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Sees)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<div>
+    <table class="table table-bordered">
+       <thead>
+           <tr>
+            <th>Lodging</th>
+           </tr>
+       </thead>
+       <tbody>
+           @foreach (var item in Model.Stays)
+           {
+               <tr>
+                   <td>@item.Name</td>
+               </tr>
+           }
+       </tbody>
+     </table>
+</div>
+
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TripId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

@@ -64,6 +64,34 @@ namespace TravelerApp.Services
                 ICollection<EatListItem> eats = new List<EatListItem>();
                 ICollection<SeeListItem> sees = new List<SeeListItem>();
                 ICollection<StayListItem> stays = new List<StayListItem>();
+                foreach (var eat in entity.Eats)
+                {
+                    var restaurant = new EatListItem()
+                    {
+                        EatId = eat.Eat.EatId,
+                        Name = eat.Eat.Name
+                    };
+                    eats.Add(restaurant);
+                }
+                foreach (var see in entity.Sees)
+                {
+                    var attraction = new SeeListItem()
+                    {
+                        SeeId = see.See.SeeId,
+                        Name = see.See.Name
+                    };
+                    sees.Add(attraction);
+                }
+                foreach (var stay in entity.Stays)
+                {
+                    var lodging = new StayListItem()
+                    {
+                        StayId = stay.Stay.StayId,
+                        Name = stay.Stay.Name
+                    };
+                    stays.Add(lodging);
+                }
+
                 return
                     new TripDetail
                     {
