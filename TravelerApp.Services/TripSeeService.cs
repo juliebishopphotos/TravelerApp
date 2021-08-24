@@ -51,14 +51,14 @@ namespace TravelerApp.Services
             }
         }
 
-        public bool DeleteTripSee(int seeId)
+        public bool DeleteTripSee(int tripId, int seeId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .TripSees
-                        .Single(e => e.SeeId == seeId);
+                        .Single(e => e.TripId == tripId && e.SeeId == seeId);
 
                 ctx.TripSees.Remove(entity);
 

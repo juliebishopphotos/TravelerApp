@@ -50,14 +50,14 @@ namespace TravelerApp.Services
             }
         }
 
-        public bool DeleteTripEat(int eatId)
+        public bool DeleteTripEat(int tripId, int eatId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .TripEats
-                        .Single(e => e.EatId == eatId);
+                        .Single(e => e.TripId == tripId && e.EatId == eatId);
 
                 ctx.TripEats.Remove(entity);
 

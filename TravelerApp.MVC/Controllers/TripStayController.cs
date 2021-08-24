@@ -45,11 +45,11 @@ namespace TravelerApp.MVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int stayId)
+        public ActionResult DeletePost(int tripId, int stayId)
         {
             var service = CreateTripStayService();
 
-            service.DeleteTripStay(stayId);
+            service.DeleteTripStay(tripId, stayId);
 
             TempData["SaveResult"] = "Lodging was deleted from your trip.";
 

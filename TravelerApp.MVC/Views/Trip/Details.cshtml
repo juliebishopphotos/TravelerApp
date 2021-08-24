@@ -4,11 +4,11 @@
     ViewBag.Title = "Details";
 }
 
-<h1 class="text-uppercase text-center">Trip Details</h1>
 
 
     <hr />
 <div class="well details-form">
+ <h1 class="text-uppercase text-center">Trip Details</h1>
     <dl class="dl-horizontal" style="width:370px; margin:0 auto;">
         <dt>
             @Html.DisplayNameFor(model => model.TripId)
@@ -38,18 +38,19 @@
 
 
 
-<div class="center">
+<div class="col-md-4" style="padding: 40px">
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Restaurants</th>
+                <th style="background-color: coral; color:white; text-align: center; 
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">RESTAURANTS</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.Eats)
             {
                 <tr>
-                    <td>@item.Name</td>
+                    <td style="text-align:center">@item.Name</td>
                 </tr>
             }
         </tbody>
@@ -58,18 +59,19 @@
 
 
 
-    <div class="center">
+    <div class="col-md-4" style="padding: 40px">
         <table class="table table-bordered">
             <thead class="thead-dark text-white">
                 <tr>
-                    <th>Attractions</th>
+                    <th style="background-color: coral; color:white; text-align: center;
+                    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">ATTRACTIONS</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.Sees)
                 {
                     <tr>
-                        <td>@item.Name</td>
+                        <td style="text-align:center">@item.Name</td>
                     </tr>
                 }
             </tbody>
@@ -77,18 +79,19 @@
     </div>
 
 
-    <div class="center">
+    <div class="col-md-4" style="padding: 40px">
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Lodging</th>
+                    <th style="background-color: coral; color:white; text-align: center;
+                    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">LODGING</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.Stays)
                 {
                     <tr>
-                        <td>@item.Name</td>
+                        <td style="text-align:center">@item.Name</td>
                     </tr>
                 }
             </tbody>

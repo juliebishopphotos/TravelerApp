@@ -34,7 +34,7 @@ namespace TravelerApp.MVC.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete(int tripId, int eatId)
+        public ActionResult Delete(int tripId, int eatId) 
         {
             var svc = CreateTripEatService();
             var model = svc.GetTripEatById(tripId, eatId);
@@ -45,11 +45,11 @@ namespace TravelerApp.MVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int eatId)
+        public ActionResult DeletePost(int tripId, int eatId)
         {
             var service = CreateTripEatService();
 
-            service.DeleteTripEat(eatId);
+            service.DeleteTripEat(tripId, eatId);
 
             TempData["SaveResult"] = "Restaurant was deleted from your trip.";
 
