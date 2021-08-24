@@ -256,7 +256,6 @@
     <Content Include="Views\Trip\Index.cshtml" />
     <Content Include="Views\Stay\Index.cshtml" />
     <Content Include="Views\TripEat\Create.cshtml" />
-    <Content Include="Views\TripEat\Delete.cshtml" />
     <Content Include="Views\Eat\Index.cshtml" />
     <Content Include="Views\Eat\Create.cshtml" />
     <Content Include="Views\Eat\Details.cshtml" />
@@ -264,9 +263,10 @@
     <Content Include="Views\Eat\Delete.cshtml" />
     <Content Include="Views\TripSee\Create.cshtml" />
     <Content Include="Views\TripSee\Delete.cshtml" />
-    <Content Include="Views\TripStay\Create.cshtml" />
     <Content Include="Views\TripStay\Delete.cshtml" />
     <Content Include="Views\Trip\Details.cshtml" />
+    <Content Include="Views\TripStay\Create.cshtml" />
+    <Content Include="Views\TripEat\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

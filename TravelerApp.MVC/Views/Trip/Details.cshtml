@@ -4,12 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h1 class="text-uppercase text-center">Trip Details</h1>
 
-<div>
-    <h4>TripDetail</h4>
+
     <hr />
-    <dl class="dl-horizontal">
+<div class="well details-form">
+    <dl class="dl-horizontal" style="width:370px; margin:0 auto;">
         <dt>
             @Html.DisplayNameFor(model => model.TripId)
         </dt>
@@ -37,7 +37,8 @@
 </div>
 
 
-<div>
+
+<div class="center">
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -57,42 +58,42 @@
 
 
 
-<div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Attractions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Sees)
-            {
+    <div class="center">
+        <table class="table table-bordered">
+            <thead class="thead-dark text-white">
                 <tr>
-                    <td>@item.Name</td>
+                    <th>Attractions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Sees)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
 
-<div>
-    <table class="table table-bordered">
-       <thead>
-           <tr>
-            <th>Lodging</th>
-           </tr>
-       </thead>
-       <tbody>
-           @foreach (var item in Model.Stays)
-           {
-               <tr>
-                   <td>@item.Name</td>
-               </tr>
-           }
-       </tbody>
-     </table>
-</div>
+    <div class="center">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Lodging</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Stays)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
 
     <p>

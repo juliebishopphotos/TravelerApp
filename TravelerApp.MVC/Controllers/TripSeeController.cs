@@ -27,7 +27,7 @@ namespace TravelerApp.MVC.Controllers
             if (service.CreateTripSee(model))
             {
                 TempData["SaveResult"] = "Attraction was added to your trip.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             };
 
             return View(model);
@@ -53,7 +53,7 @@ namespace TravelerApp.MVC.Controllers
 
             TempData["SaveResult"] = "Attraction was deleted from your trip.";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Delete");
         }
 
         private TripSeeService CreateTripSeeService()
