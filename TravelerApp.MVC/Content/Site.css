@@ -1,5 +1,4 @@
 ﻿body {
-    padding-bottom: 50px;
     background-image: url(Assets/travel.jpg);
     background-size: 2000px;
 }
@@ -13,6 +12,8 @@
     padding: 40px;
     font-size: 16px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:rgb(153 174 148 / 0.91);
+    color: black;
 }
 
 p {
@@ -25,8 +26,16 @@ a {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h3 {
+    color: white;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
 a:hover {
-color: rgb(255 111 68 / 0.83);
+color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -36,7 +45,8 @@ color: rgb(255 111 68 / 0.83);
 }
 
 .table {
-    background-color: rgb(153 174 148 / 0.74);
+    background-color: rgb(153 174 148 / 0.91);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -45,6 +55,15 @@ color: rgb(255 111 68 / 0.83);
 .dl-horizontal dt {
     white-space: normal;
 }
+
+.dl-horizontal {
+    background-color: rgb(153 174 148 / 0.91);
+    font-size: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 34%;
+}
+
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
