@@ -186,7 +186,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Assets\attraction.jpg" />
+    <Content Include="Content\Assets\attractions.jpg" />
+    <Content Include="Content\Assets\lodging.jpg" />
+    <Content Include="Content\Assets\map.jpg" />
+    <Content Include="Content\Assets\photos.jpg" />
+    <Content Include="Content\Assets\restaurant.jpg" />
+    <Content Include="Content\Assets\stays.jpg" />
     <Content Include="Content\Assets\travel.jpg" />
+    <Content Include="Content\Assets\eat.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

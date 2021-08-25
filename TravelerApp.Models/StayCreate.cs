@@ -13,6 +13,7 @@ namespace TravelerApp.Models
         [Display(Name="Lodging Name")]
         public string Name { get; set; }
         public string Location { get; set; }
+        [Display(Name="Type")]
         public LodgingType TypeOfLodging { get; set; }
     }
 }

@@ -1,17 +1,42 @@
 ﻿body {
-    padding-bottom: 20px;
-    background-image:url(Assets/travel.jpg);
+    padding-bottom: 50px;
+    background-image: url(Assets/travel.jpg);
     background-size: 2000px;
 }
 
-h2 {
-    padding-bottom: 50px;
+.form-group {
+    padding-left: 27%;
+}
+
+.form-horizontal {
+    color: rgb(153 174 148);
+    padding: 40px;
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: white;
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a:hover {
+color: rgb(255 111 68 / 0.83);
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.table {
+    background-color: rgb(153 174 148 / 0.74);
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
