@@ -7,32 +7,37 @@
 <h2>Delete</h2>
 
 <center><h3>Are you sure you want to delete this?</h3></center>
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TripName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TripName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EatName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EatName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color" style="text-align:center">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index", "Eat")
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TripId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TripId, new SelectList(ViewBag.Trips, "TripId", "Name"), "Select Trip")
+                @Html.ValidationMessageFor(model => model.TripId, "", new { @class = "text-danger" })
+            </div>
         </div>
-    }
-</div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EatId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EatId, new SelectList(ViewBag.Eats, "EatId", "Name"), "Select Restaurant")
+                @Html.ValidationMessageFor(model => model.EatId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index", "Eat")
+            </div>
+        </div>
+    </div> 
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

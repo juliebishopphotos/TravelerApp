@@ -13,7 +13,17 @@ namespace TravelerApp.MVC.Controllers
     {
         public ActionResult Create()
         {
+            {
+                var tripservice = CreateTripService();
+                var trips = tripservice.GetTrips();
+                ViewBag.Trips = trips.ToList();
+
+                var stayservice = CreateStayService();
+                var stays = stayservice.GetStays();
+                ViewBag.Stays = stays.ToList();
+            }
             return View();
+
         }
 
         [HttpPost]
@@ -34,32 +44,70 @@ namespace TravelerApp.MVC.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete(int tripId, int stayId)
+        public ActionResult Delete()
         {
-            var svc = CreateTripStayService();
-            var model = svc.GetTripStayById(tripId, stayId);
+            {
+                var tripservice = DeleteTripService();
+                var trips = tripservice.GetTrips();
+                ViewBag.Trips = trips.ToList();
 
-            return View(model);
+                var stayservice = DeleteStayService();
+                var stays = stayservice.GetStays();
+                ViewBag.Stays = stays.ToList();
+            }
+            return View();
         }
 
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int tripId, int stayId)
+        public ActionResult DeletePost(TripStayDetail model)
         {
+            if (!ModelState.IsValid) return View(model);
+
             var service = CreateTripStayService();
 
-            service.DeleteTripStay(tripId, stayId);
+            if (service.DeleteTripStay(model))
+            {
+                TempData["SaveResult"] = "Lodging was deleted from your trip.";
+                return RedirectToAction("Delete");
+            };
 
-            TempData["SaveResult"] = "Lodging was deleted from your trip.";
-
-            return RedirectToAction("Delete");
+            return View(model);
         }
 
         private TripStayService CreateTripStayService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TripStayService(userId);
+            return service;
+        }
+
+        private TripService CreateTripService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TripService(userId);
+            return service;
+        }
+
+        private StayService CreateStayService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new StayService(userId);
+            return service;
+        }
+
+        private TripService DeleteTripService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TripService(userId);
+            return service;
+        }
+
+        private StayService DeleteStayService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new StayService(userId);
             return service;
         }
     }

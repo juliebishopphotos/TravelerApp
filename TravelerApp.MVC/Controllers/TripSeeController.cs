@@ -13,7 +13,17 @@ namespace TravelerApp.MVC.Controllers
     {
         public ActionResult Create()
         {
+            {
+                var tripservice = CreateTripService();
+                var trips = tripservice.GetTrips();
+                ViewBag.Trips = trips.ToList();
+
+                var seeservice = CreateSeeService();
+                var sees = seeservice.GetSees();
+                ViewBag.Sees = sees.ToList();
+            }
             return View();
+
         }
 
         [HttpPost]
@@ -34,32 +44,71 @@ namespace TravelerApp.MVC.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete(int tripId, int seeId)
+        public ActionResult Delete()
         {
-            var svc = CreateTripSeeService();
-            var model = svc.GetTripSeeById(tripId, seeId);
+            {
+                var tripservice = DeleteTripService();
+                var trips = tripservice.GetTrips();
+                ViewBag.Trips = trips.ToList();
 
-            return View(model);
+                var seeservice = DeleteSeeService();
+                var sees = seeservice.GetSees();
+                ViewBag.Sees = sees.ToList();
+            }
+            return View();
         }
 
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int tripId, int seeId)
+        public ActionResult DeletePost(TripSeeDetail model)
         {
+            if (!ModelState.IsValid) return View(model);
+
             var service = CreateTripSeeService();
 
-            service.DeleteTripSee(tripId, seeId);
+            if (service.DeleteTripSee(model))
+            {
+                TempData["SaveResult"] = "Attraction was deleted from your trip.";
+                return RedirectToAction("Delete");
+            };
 
-            TempData["SaveResult"] = "Attraction was deleted from your trip.";
-
-            return RedirectToAction("Delete");
+            return View(model);
         }
 
         private TripSeeService CreateTripSeeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TripSeeService(userId);
+            return service;
+        }
+
+
+        private TripService CreateTripService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TripService(userId);
+            return service;
+        }
+
+        private SeeService CreateSeeService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new SeeService(userId);
+            return service;
+        }
+
+        private TripService DeleteTripService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TripService(userId);
+            return service;
+        }
+
+        private SeeService DeleteSeeService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new SeeService(userId);
             return service;
         }
     }

@@ -12,8 +12,18 @@ namespace TravelerApp.MVC.Controllers
     public class TripEatController : Controller
     {
         public ActionResult Create()
-        {
+        { 
+            {
+                var tripservice = CreateTripService();
+                var trips = tripservice.GetTrips();
+                ViewBag.Trips = trips.ToList();
+
+                var eatservice = CreateEatService();
+                var eats = eatservice.GetEats();
+                ViewBag.Eats = eats.ToList();
+            }
             return View();
+
         }
 
         [HttpPost]
@@ -34,32 +44,70 @@ namespace TravelerApp.MVC.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete(int tripId, int eatId) 
+        public ActionResult Delete() 
         {
-            var svc = CreateTripEatService();
-            var model = svc.GetTripEatById(tripId, eatId);
+            {
+                var tripservice = DeleteTripService();
+                var trips = tripservice.GetTrips();
+                ViewBag.Trips = trips.ToList();
 
-            return View(model);
+                var eatservice = DeleteEatService();
+                var eats = eatservice.GetEats();
+                ViewBag.Eats = eats.ToList();
+            }
+            return View();
         }
 
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int tripId, int eatId)
+        public ActionResult DeletePost(TripEatDetail model)
         {
+            if (!ModelState.IsValid) return View(model);
+
             var service = CreateTripEatService();
 
-            service.DeleteTripEat(tripId, eatId);
+            if (service.DeleteTripEat(model))
+            {
+                TempData["SaveResult"] = "Restaurant was deleted from your trip.";
+                return RedirectToAction("Delete");
+            };
 
-            TempData["SaveResult"] = "Restaurant was deleted from your trip.";
-
-            return RedirectToAction("Delete");
+            return View(model);
         }
 
         private TripEatService CreateTripEatService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TripEatService(userId);
+            return service;
+        }
+
+        private TripService CreateTripService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TripService(userId);
+            return service;
+        }
+
+        private EatService CreateEatService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new EatService(userId);
+            return service;
+        }
+
+        private TripService DeleteTripService() 
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TripService(userId);
+            return service;
+        }
+
+        private EatService DeleteEatService() 
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new EatService(userId);
             return service;
         }
     }

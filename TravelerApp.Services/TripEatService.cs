@@ -33,36 +33,23 @@ namespace TravelerApp.Services
             }
         }
 
-        public TripEatDetail GetTripEatById(int tripId, int eatId)
+
+        public bool DeleteTripEat(TripEatDetail model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .TripEats
-                        .Single(e => e.TripId == tripId && e.EatId == eatId);
-                return
-                    new TripEatDetail
-                    {
-                        TripName = entity.Trip.Name,
-                        EatName = entity.Eat.Name,
-                    };
-            }
-        }
-
-        public bool DeleteTripEat(int tripId, int eatId)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                        .TripEats
-                        .Single(e => e.TripId == tripId && e.EatId == eatId);
-
+                      .TripEats
+                      .Single(e => e.TripId == model.TripId && e.EatId == model.EatId);
+                {
+                    entity.TripId = model.TripId;
+                    entity.EatId = model.EatId;
+                };
                 ctx.TripEats.Remove(entity);
-
                 return ctx.SaveChanges() == 1;
             }
         }
-    }
+
+    }   
 }

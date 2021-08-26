@@ -37,12 +37,11 @@
 </div>
 
 
-
 <div class="col-md-4" style="padding: 40px">
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th style="background-color: rgb(222 88 63); color: black; text-align: center; 
+                <th style="background-color: rgb(222 88 63); color: black; text-align: center;
                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">RESTAURANTS</th>
             </tr>
         </thead>
@@ -55,28 +54,30 @@
             }
         </tbody>
     </table>
+   <center>@Html.ActionLink("Delete Restaurant", "Delete", "TripEat")</center>
 </div>
 
 
 
-    <div class="col-md-4" style="padding: 40px">
-        <table class="table table-bordered">
-            <thead class="thead-dark text-white">
-                <tr>
-                    <th style="background-color: rgb(222 88 63); color: black; text-align: center; 
+<div class="col-md-4" style="padding: 40px">
+    <table class="table table-bordered">
+        <thead class="thead-dark text-white">
+            <tr>
+                <th style="background-color: rgb(222 88 63); color: black; text-align: center;
                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">ATTRACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Sees)
+            {
+                <tr>
+                    <td style="text-align:center">@item.Name</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Sees)
-                {
-                    <tr>
-                        <td style="text-align:center">@item.Name</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
+    <center>@Html.ActionLink("Delete Attraction", "Delete", "TripSee")</center>
+</div>
 
 
     <div class="col-md-4" style="padding: 40px">
@@ -96,6 +97,7 @@
                 }
             </tbody>
         </table>
+        <center>@Html.ActionLink("Delete Lodging", "Delete", "TripStay")</center>
     </div>
 
 <center>
