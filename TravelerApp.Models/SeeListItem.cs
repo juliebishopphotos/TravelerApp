@@ -9,9 +9,11 @@ namespace TravelerApp.Models
 {
     public class SeeListItem
     {
-        [Display(Name="Attraction Id")]
+        [Display(Name = "Attraction Id")]
         public int SeeId { get; set; }
-        [Display(Name="Attraction Name")]
+        [Display(Name = "Attraction Name")]
         public string Name { get; set; }
-    }
+        [Display(Name = "Location")]
+        public string Location { get; set; }
+    } 
 }

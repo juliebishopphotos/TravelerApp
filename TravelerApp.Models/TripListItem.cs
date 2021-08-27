@@ -13,5 +13,7 @@ namespace TravelerApp.Models
         public int TripId { get; set; }
         [Display(Name="Trip Name")]
         public string Name { get; set; }
+        [Display(Name = "Location")]
+        public string Location { get; set; }
     }
 }

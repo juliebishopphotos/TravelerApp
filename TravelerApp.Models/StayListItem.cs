@@ -13,5 +13,7 @@ namespace TravelerApp.Models
         public int StayId { get; set; }
         [Display(Name="Lodging Name")]
         public string Name { get; set; }
+        [Display(Name = "Location")]
+        public string Location { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace TravelerApp.Models
         [Display(Name="Restaurant Id")]
         public int EatId { get; set; }
         [Display(Name="Restaurant Name")]
-        public string Name { get; set; } 
+        public string Name { get; set; }
+        [Display(Name = "Location")]
+        public string Location { get; set; }
     }
 }

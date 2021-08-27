@@ -7,7 +7,7 @@
 
 
     <hr />
-<div class="well details-form" style="background-color: rgb(255 255 255 / 0.50); border: none ">
+<div class="well details-form" style="background-color: rgb(255 255 255 / 0.46); border: none ">
  <h1 class="text-uppercase text-center">Trip Details</h1>
     <dl class= style:"width: 370px; margin: 0 auto;" style="text-align:center; font-size: 20px">
         <dt>
@@ -36,6 +36,11 @@
     </dl>
 </div>
 
+<center>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</center>
 
 <div class="col-md-4" style="padding: 40px">
     <table class="table table-bordered">
@@ -54,7 +59,10 @@
             }
         </tbody>
     </table>
-   <center>@Html.ActionLink("Delete Restaurant", "Delete", "TripEat")</center>
+    <center>
+        <a class="btn btn-primary btn-md" href="https://localhost:44339/TripEat/Delete"
+           style="background-color: rgb(25 25 25 / 0.71); border:none">Delete Restaurant</a>
+    </center>
 </div>
 
 
@@ -76,7 +84,10 @@
             }
         </tbody>
     </table>
-    <center>@Html.ActionLink("Delete Attraction", "Delete", "TripSee")</center>
+    <center>
+        <a class="btn btn-primary btn-md" href="https://localhost:44339/TripSee/Delete"
+           style="background-color: rgb(25 25 25 / 0.71); border:none">Delete Attraction</a>
+    </center>
 </div>
 
 
@@ -97,12 +108,10 @@
                 }
             </tbody>
         </table>
-        <center>@Html.ActionLink("Delete Lodging", "Delete", "TripStay")</center>
+        <center>
+        <a class="btn btn-primary btn-md" href= "https://localhost:44339/TripStay/Delete"
+           style="background-color: rgb(25 25 25 / 0.71); border:none">Delete Lodging</a>
+        </center>
     </div>
 
-<center>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.TripId }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</center>
+

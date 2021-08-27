@@ -48,6 +48,7 @@ namespace TravelerApp.Services
                                 {
                                     StayId = e.StayId,
                                     Name = e.Name,
+                                    Location = e.Location
                                 }
                          );
                 return query.ToArray();

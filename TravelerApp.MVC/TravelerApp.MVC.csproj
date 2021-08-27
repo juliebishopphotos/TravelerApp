@@ -188,13 +188,15 @@
   <ItemGroup>
     <Content Include="Content\Assets\attraction.jpg" />
     <Content Include="Content\Assets\attractions.jpg" />
-    <Content Include="Content\Assets\eatit.jpg" />
+    <Content Include="Content\Assets\dining.jpg" />
     <Content Include="Content\Assets\food.jpg" />
     <Content Include="Content\Assets\letseat.jpg" />
     <Content Include="Content\Assets\lodging.jpg" />
     <Content Include="Content\Assets\map.jpg" />
     <Content Include="Content\Assets\photos.jpg" />
     <Content Include="Content\Assets\restaurant.jpg" />
+    <Content Include="Content\Assets\restaurants.jpg" />
+    <Content Include="Content\Assets\roadtrip.jpg" />
     <Content Include="Content\Assets\salad.jpg" />
     <Content Include="Content\Assets\stays.jpg" />
     <Content Include="Content\Assets\travel.jpg" />
