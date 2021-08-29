@@ -3,11 +3,40 @@
     min-height: 100%;
 }
 
+
 body {
     background-image: url(Assets/travel.jpg);
     background-size: 2000px;
-    padding-bottom: 75px;
 }
+
+.container {
+    display: inherit;
+}
+
+div.home {
+    background-color: rgb(222 88 63 / 0.70);
+    padding-bottom: 90px;
+    padding-top: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.home {
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+p.lead {
+    width: 480px;
+    margin-right: auto;
+    margin-left: auto;
+    display: table-cell;
+  word-wrap: break-word;
+}
+
 
 .form-group {
     padding-left: 27%;
@@ -36,14 +65,25 @@ a {
 
 h3 {
     color: white;
+    padding-bottom: 15px;
 }
 
 .table th, .table td {
     text-align: center;
 }
 
-#buttons a {
+div.buttons a {
     color: transparent;
+}
+
+div.buttons .button {
+    background-color: rgb(255 255 255 / 0.35);
+    margin: 15px;
+    padding: 5px;
+}
+
+div.buttons :hover .button{
+    opacity: 70%;
 }
 
 a:hover {
@@ -55,6 +95,8 @@ color: white;
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .table {
@@ -87,6 +129,7 @@ textarea {
 
 footer {
     position: absolute;
+    background-color: rgb(255 255 255 / 0.46);
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;

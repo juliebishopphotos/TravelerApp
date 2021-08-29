@@ -188,6 +188,7 @@
   <ItemGroup>
     <Content Include="Content\Assets\attraction.jpg" />
     <Content Include="Content\Assets\attractions.jpg" />
+    <Content Include="Content\Assets\desert.jpg" />
     <Content Include="Content\Assets\dining.jpg" />
     <Content Include="Content\Assets\food.jpg" />
     <Content Include="Content\Assets\letseat.jpg" />

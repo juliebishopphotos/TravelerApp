@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,7 +18,7 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="padding-left: 5%; padding-right: 5%">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Trips", "Index", "Trip")</li>
@@ -26,7 +26,7 @@
                     <li>@Html.ActionLink("Attractions", "Index", "See")</li>
                     <li>@Html.ActionLink("Lodging", "Index", "Stay")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                  @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
