@@ -13,6 +13,10 @@ body {
     display: inherit;
 }
 
+.row {
+    text-align: center;
+}
+
 div.home {
     background-color: rgb(222 88 63 / 0.70);
     padding-bottom: 90px;
@@ -23,6 +27,7 @@ div.home {
     text-align: center;
     min-height: 100vh;
 }
+
 
 .home {
     margin-top: -10px;
