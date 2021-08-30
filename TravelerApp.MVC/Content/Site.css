@@ -29,12 +29,12 @@ div.home {
     margin-bottom: -10px;
 }
 
-p.lead {
-    width: 480px;
+div.lead {
+    max-width: 476px;
     margin-right: auto;
     margin-left: auto;
     display: table-cell;
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 
@@ -50,11 +50,19 @@ p.lead {
     font-size: 16px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color:rgb(153 174 148 / 0.91);
+    border-radius: 10px 10px;
     color: black;
 }
 
 p {
     text-align: center;
+    background-color: rgb(222 88 63 / 0.70);
+    border-radius: 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a {
@@ -118,6 +126,7 @@ color: white;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 34%;
+    border-radius: 10px 10px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
