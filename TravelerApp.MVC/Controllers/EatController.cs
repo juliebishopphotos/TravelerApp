@@ -9,7 +9,6 @@ using TravelerApp.Services;
 
 namespace TravelerApp.MVC.Controllers
 {
-    [Authorize]
     public class EatController : Controller
     {
         public ActionResult Index()
