@@ -46,7 +46,7 @@ namespace TravelerApp.MVC.Controllers
         [ActionName("Delete")]
         public ActionResult Delete()
         {
-            {
+            
                 var tripservice = DeleteTripService();
                 var trips = tripservice.GetTrips();
                 ViewBag.Trips = trips.ToList();
@@ -54,7 +54,7 @@ namespace TravelerApp.MVC.Controllers
                 var stayservice = DeleteStayService();
                 var stays = stayservice.GetStays();
                 ViewBag.Stays = stays.ToList();
-            }
+            
             return View();
         }
 
