@@ -5,6 +5,6 @@
 They can create their own personalized trips by adding/updating/deleting Restaurants, Attractions and Lodging. They can also view 
 other users input to discover the best places to eat, unique things to see and where to stay when arriving at their destination.<h4>
 
-<p align="center">The final product was deployed to the web using Microsoft’s Azure Web Services and can be viewed at this link:<p>
+<p align="center">The final product was deployed to the web using Microsoft’s Azure Web Services and can be viewed at the link below:<p>
   <div align="center"> https://travelerapp.azurewebsites.net <div>
       
