@@ -9,9 +9,9 @@ namespace TravelerApp.Models
 {
     public class TripEatDetail
     {
-        [Display(Name = "Trip Id")]
+        [Display(Name = "Trip Name")]
         public int TripId { get; set; }
-        [Display(Name = "Restaurant Id")]
+        [Display(Name = "Restaurant Name")]
         public int EatId { get; set; }
     }
 }
